@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: db19c02-volume
+  namespace: oracle
+spec:
+  storageClassName: db19c02-volume
+  capacity:
+    storage: 50Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Recycle
+  nfs:
+    server: 192.168.1.11
+    path: "/volume2/NFS/homelab/oracle/db19c02-volume"
+
